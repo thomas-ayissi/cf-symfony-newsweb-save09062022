@@ -45,3 +45,13 @@ Enregistrez .env en `.env.local` et modifiez ces lignes pour que la DB soit cell
 
 ## mapping de nos tables
 
+dans la console :
+
+        php bin/console doctrine:mapping:import App\\Entity annotation --path=src/Entity
+
+Nos fichiers de mapping sont créés dans Symfony
+
+Mais pour ajouter les setters, getters et fonctions de liens, il faut taper:
+
+        php bin/console make:entity --regenerate
+

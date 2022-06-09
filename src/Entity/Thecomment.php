@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -67,6 +69,86 @@ class Thecomment
     public function __construct()
     {
         $this->thearticleIdthearticle = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getIdthecomment(): ?int
+    {
+        return $this->idthecomment;
+    }
+
+    public function getThecommenttext(): ?string
+    {
+        return $this->thecommenttext;
+    }
+
+    public function setThecommenttext(string $thecommenttext): self
+    {
+        $this->thecommenttext = $thecommenttext;
+
+        return $this;
+    }
+
+    public function getThecommentdate(): ?\DateTimeInterface
+    {
+        return $this->thecommentdate;
+    }
+
+    public function setThecommentdate(?\DateTimeInterface $thecommentdate): self
+    {
+        $this->thecommentdate = $thecommentdate;
+
+        return $this;
+    }
+
+    public function isThecommentactive(): ?bool
+    {
+        return $this->thecommentactive;
+    }
+
+    public function setThecommentactive(bool $thecommentactive): self
+    {
+        $this->thecommentactive = $thecommentactive;
+
+        return $this;
+    }
+
+    public function getTheuserIdtheuser(): ?Theuser
+    {
+        return $this->theuserIdtheuser;
+    }
+
+    public function setTheuserIdtheuser(?Theuser $theuserIdtheuser): self
+    {
+        $this->theuserIdtheuser = $theuserIdtheuser;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Thearticle>
+     */
+    public function getThearticleIdthearticle(): Collection
+    {
+        return $this->thearticleIdthearticle;
+    }
+
+    public function addThearticleIdthearticle(Thearticle $thearticleIdthearticle): self
+    {
+        if (!$this->thearticleIdthearticle->contains($thearticleIdthearticle)) {
+            $this->thearticleIdthearticle[] = $thearticleIdthearticle;
+            $thearticleIdthearticle->addThecommentIdthecomment($this);
+        }
+
+        return $this;
+    }
+
+    public function removeThearticleIdthearticle(Thearticle $thearticleIdthearticle): self
+    {
+        if ($this->thearticleIdthearticle->removeElement($thearticleIdthearticle)) {
+            $thearticleIdthearticle->removeThecommentIdthecomment($this);
+        }
+
+        return $this;
     }
 
 }

@@ -37,5 +37,34 @@ class Permission
      */
     private $permissionrole;
 
+    public function isIdpermission(): ?bool
+    {
+        return $this->idpermission;
+    }
+
+    public function getPermissionname(): ?string
+    {
+        return $this->permissionname;
+    }
+
+    public function setPermissionname(string $permissionname): self
+    {
+        $this->permissionname = $permissionname;
+
+        return $this;
+    }
+
+    public function isPermissionrole(): ?bool
+    {
+        return $this->permissionrole;
+    }
+
+    public function setPermissionrole(bool $permissionrole): self
+    {
+        $this->permissionrole = $permissionrole;
+
+        return $this;
+    }
+
 
 }

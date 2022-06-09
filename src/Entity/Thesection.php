@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -63,6 +65,71 @@ class Thesection
     public function __construct()
     {
         $this->thearticleIdthearticle = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getIdthesection(): ?int
+    {
+        return $this->idthesection;
+    }
+
+    public function getThesectiontitle(): ?string
+    {
+        return $this->thesectiontitle;
+    }
+
+    public function setThesectiontitle(string $thesectiontitle): self
+    {
+        $this->thesectiontitle = $thesectiontitle;
+
+        return $this;
+    }
+
+    public function getThesectionslug(): ?string
+    {
+        return $this->thesectionslug;
+    }
+
+    public function setThesectionslug(string $thesectionslug): self
+    {
+        $this->thesectionslug = $thesectionslug;
+
+        return $this;
+    }
+
+    public function getThesectiondesc(): ?string
+    {
+        return $this->thesectiondesc;
+    }
+
+    public function setThesectiondesc(?string $thesectiondesc): self
+    {
+        $this->thesectiondesc = $thesectiondesc;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Thearticle>
+     */
+    public function getThearticleIdthearticle(): Collection
+    {
+        return $this->thearticleIdthearticle;
+    }
+
+    public function addThearticleIdthearticle(Thearticle $thearticleIdthearticle): self
+    {
+        if (!$this->thearticleIdthearticle->contains($thearticleIdthearticle)) {
+            $this->thearticleIdthearticle[] = $thearticleIdthearticle;
+        }
+
+        return $this;
+    }
+
+    public function removeThearticleIdthearticle(Thearticle $thearticleIdthearticle): self
+    {
+        $this->thearticleIdthearticle->removeElement($thearticleIdthearticle);
+
+        return $this;
     }
 
 }

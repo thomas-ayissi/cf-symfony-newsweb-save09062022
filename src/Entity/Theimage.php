@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -70,6 +72,83 @@ class Theimage
     public function __construct()
     {
         $this->thearticleIdthearticle = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getIdtheimage(): ?int
+    {
+        return $this->idtheimage;
+    }
+
+    public function getTheimagename(): ?string
+    {
+        return $this->theimagename;
+    }
+
+    public function setTheimagename(string $theimagename): self
+    {
+        $this->theimagename = $theimagename;
+
+        return $this;
+    }
+
+    public function getTheimagetype(): ?string
+    {
+        return $this->theimagetype;
+    }
+
+    public function setTheimagetype(string $theimagetype): self
+    {
+        $this->theimagetype = $theimagetype;
+
+        return $this;
+    }
+
+    public function getTheimageurl(): ?string
+    {
+        return $this->theimageurl;
+    }
+
+    public function setTheimageurl(string $theimageurl): self
+    {
+        $this->theimageurl = $theimageurl;
+
+        return $this;
+    }
+
+    public function getTheimagetext(): ?string
+    {
+        return $this->theimagetext;
+    }
+
+    public function setTheimagetext(?string $theimagetext): self
+    {
+        $this->theimagetext = $theimagetext;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Thearticle>
+     */
+    public function getThearticleIdthearticle(): Collection
+    {
+        return $this->thearticleIdthearticle;
+    }
+
+    public function addThearticleIdthearticle(Thearticle $thearticleIdthearticle): self
+    {
+        if (!$this->thearticleIdthearticle->contains($thearticleIdthearticle)) {
+            $this->thearticleIdthearticle[] = $thearticleIdthearticle;
+        }
+
+        return $this;
+    }
+
+    public function removeThearticleIdthearticle(Thearticle $thearticleIdthearticle): self
+    {
+        $this->thearticleIdthearticle->removeElement($thearticleIdthearticle);
+
+        return $this;
     }
 
 }

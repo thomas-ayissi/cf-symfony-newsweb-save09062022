@@ -68,5 +68,82 @@ class Theuser
      */
     private $permissionIdpermission;
 
+    public function getIdtheuser(): ?int
+    {
+        return $this->idtheuser;
+    }
+
+    public function getTheuserlogin(): ?string
+    {
+        return $this->theuserlogin;
+    }
+
+    public function setTheuserlogin(string $theuserlogin): self
+    {
+        $this->theuserlogin = $theuserlogin;
+
+        return $this;
+    }
+
+    public function getTheuserpwd(): ?string
+    {
+        return $this->theuserpwd;
+    }
+
+    public function setTheuserpwd(string $theuserpwd): self
+    {
+        $this->theuserpwd = $theuserpwd;
+
+        return $this;
+    }
+
+    public function getTheusermail(): ?string
+    {
+        return $this->theusermail;
+    }
+
+    public function setTheusermail(string $theusermail): self
+    {
+        $this->theusermail = $theusermail;
+
+        return $this;
+    }
+
+    public function getTheuseruniqid(): ?string
+    {
+        return $this->theuseruniqid;
+    }
+
+    public function setTheuseruniqid(string $theuseruniqid): self
+    {
+        $this->theuseruniqid = $theuseruniqid;
+
+        return $this;
+    }
+
+    public function isTheuseractivate(): ?bool
+    {
+        return $this->theuseractivate;
+    }
+
+    public function setTheuseractivate(?bool $theuseractivate): self
+    {
+        $this->theuseractivate = $theuseractivate;
+
+        return $this;
+    }
+
+    public function getPermissionIdpermission(): ?Permission
+    {
+        return $this->permissionIdpermission;
+    }
+
+    public function setPermissionIdpermission(?Permission $permissionIdpermission): self
+    {
+        $this->permissionIdpermission = $permissionIdpermission;
+
+        return $this;
+    }
+
 
 }
