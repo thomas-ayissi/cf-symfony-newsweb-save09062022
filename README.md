@@ -75,6 +75,16 @@ Il risque d'y avoir des erreurs car les instances de classes ne sont pas afficha
             return $this->getThecommenttext();
         }
 
+## npm
+
+On va vérifier qu'on a la dernière version de npm et installer les composants nécessaires:
+
+        npm install
+
+On va "construire les fichiers js et css publiques" grâce à webpack-encore
+
+        npm run build
+
 ## création du contrôlleur
 
         php bin/console make:controller

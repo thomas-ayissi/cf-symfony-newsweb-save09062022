@@ -9,12 +9,18 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Homepage</h1>
+<h2>Derniers articles</h2>
+    {% for item in articles %}
+        <h3>{{ item.thearticletitle }}</h3>
+        <p>Nombre de commentaire : {{ item.thecommentIdthecomment.count }}   </p>
+        <p>Rubrique : {% for rub in item.thesectionIdthesection %}
+            <a href="./section/{{ rub.getThesectionslug }}">{{ rub.getThesectiontitle }}</a>
+            {% endfor %}</p>
+        <p>Ecrit par {{ item.theuserIdtheuser.theuserlogin }} le {{ item.thearticledate|date("d/m/Y à H:i") }}</p>
+        <p>{{ item.thearticleresume }} ... <a href="./article/{{ item.thearticleslug }}">Lire la suite</a></p>
+    {% else %}
+    {% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'E:/symfony2022/newswebs1/src/Controller/PublicController.php'|file_link(0) }}">src/Controller/PublicController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'E:/symfony2022/newswebs1/templates/public/index.html.twig'|file_link(0) }}">templates/public/index.html.twig</a></code></li>
-    </ul>
 </div>
 {% endblock %}
