@@ -145,5 +145,9 @@ class Theuser
         return $this;
     }
 
+    public function __tostring():string {
+        return $this->getIdtheuser()." - ".
+        $this->getTheuserlogin();
+    }
 
 }

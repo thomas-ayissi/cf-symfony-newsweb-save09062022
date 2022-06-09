@@ -151,4 +151,8 @@ class Thecomment
         return $this;
     }
 
+    public function __tostring():string {
+        return $this->getThecommenttext();
+    }
+
 }

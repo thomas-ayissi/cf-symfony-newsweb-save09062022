@@ -132,4 +132,7 @@ class Thesection
         return $this;
     }
 
+    public function __tostring():string {
+        return $this->getThesectiontitle();
+    }
 }

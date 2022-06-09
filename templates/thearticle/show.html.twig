@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Thearticle{% endblock %}
+
+{% block body %}
+    <h1>Thearticle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idthearticle</th>
+                <td>{{ thearticle.idthearticle }}</td>
+            </tr>
+            <tr>
+                <th>Thearticletitle</th>
+                <td>{{ thearticle.thearticletitle }}</td>
+            </tr>
+            <tr>
+                <th>Thearticleslug</th>
+                <td>{{ thearticle.thearticleslug }}</td>
+            </tr>
+            <tr>
+                <th>Thearticleresume</th>
+                <td>{{ thearticle.thearticleresume }}</td>
+            </tr>
+            <tr>
+                <th>Thearticletext</th>
+                <td>{{ thearticle.thearticletext }}</td>
+            </tr>
+            <tr>
+                <th>Thearticledate</th>
+                <td>{{ thearticle.thearticledate ? thearticle.thearticledate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Thearticleactivate</th>
+                <td>{{ thearticle.thearticleactivate ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_thearticle_index') }}">back to list</a>
+
+    <a href="{{ path('app_thearticle_edit', {'idthearticle': thearticle.idthearticle}) }}">edit</a>
+
+    {{ include('thearticle/_delete_form.html.twig') }}
+{% endblock %}

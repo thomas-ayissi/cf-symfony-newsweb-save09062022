@@ -55,3 +55,23 @@ Mais pour ajouter les setters, getters et fonctions de liens, il faut taper:
 
         php bin/console make:entity --regenerate
 
+## création du premier CRUD
+
+Dans la console
+
+        php bin/console make:crud
+
+Et on choisi le `src/Entity` que l'on souhaite, ici : Thearticle
+
+On peut voir ce CRUD à l'url
+
+https://127.0.0.1:8000/thearticle/
+
+Il risque d'y avoir des erreurs car les instances de classes ne sont pas affichables depuis celle-ci: on va utiliser __tostring dans les classes liées aux articles :
+
+        src/Entity/Thecomment.php
+        ...
+        public function __tostring():string {
+            return $this->getThecommenttext();
+        }
+
