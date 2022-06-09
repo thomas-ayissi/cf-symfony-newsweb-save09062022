@@ -43,3 +43,5 @@ Enregistrez .env en `.env.local` et modifiez ces lignes pour que la DB soit cell
         # DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
         DATABASE_URL="mysql://root:@127.0.0.1:3307/newswebs1?charset=utf8"
 
+## mapping de nos tables
+
