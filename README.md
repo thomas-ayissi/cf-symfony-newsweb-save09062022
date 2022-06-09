@@ -75,3 +75,14 @@ Il risque d'y avoir des erreurs car les instances de classes ne sont pas afficha
             return $this->getThecommenttext();
         }
 
+## création du contrôlleur
+
+        php bin/console make:controller
+
+On le nomme PublicController et on met le chemin vers la racine du site (/)
+
+On peut voir les vues ici :
+
+        php bin/console debug:router
+
+
